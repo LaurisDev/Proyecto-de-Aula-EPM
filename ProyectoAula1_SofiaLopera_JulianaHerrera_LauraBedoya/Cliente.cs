@@ -201,18 +201,23 @@ namespace ProyectoAula1_SofiaLopera_JulianaHerrera_LauraBedoya
             }
         }
 
-        public static void EliminarInformacionCliente(List<Cliente> clientes )
+
+        public static void EliminarInformacionCliente(List<Cliente> clientes)
         {
             Console.Write("Ingrese la cédula del cliente que desea eliminar: ");
-            int cedulaClienteEliminar = int.Parse(Console.ReadLine());
+            int cedulaClienteEliminar = int.Parse(Console.ReadLine()); // Lee la entrada del usuario
+
             Cliente clienteEliminar = clientes.Find(c => c.Cedula == cedulaClienteEliminar);
             if (clienteEliminar != null)
             {
                 clientes.Remove(clienteEliminar);
-                Console.WriteLine("Cliente eliminado correctamente");
+                Console.WriteLine("Cliente(s) eliminado(s) correctamente");
             }
             else { Console.WriteLine("Cliente no encontrado"); }
         }
+
+
+
 
     }
 

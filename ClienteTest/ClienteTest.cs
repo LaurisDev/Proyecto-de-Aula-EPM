@@ -36,9 +36,9 @@ namespace ProyectoAula1_SofiaLopera_JulianaHerrera_LauraBedoya_Test
             Assert.AreEqual(promedioConsumoAgua, cliente.PromedioConsumoAgua);
             Assert.AreEqual(consumoActualAgua, cliente.ConsumoActualAgua);
         }
-    
 
- 
+
+
         [TestMethod]
         public void SolicitarDatos()
         {
@@ -197,12 +197,38 @@ namespace ProyectoAula1_SofiaLopera_JulianaHerrera_LauraBedoya_Test
             Assert.AreEqual(nuevoConsumoAgua, cliente.ConsumoActualAgua);
 
         }
+        [TestMethod]
+        public void EliminarCliente_ClienteEnLista_ClienteEliminadoCorrectamente()
+        {
+            // Arrange
+            List<Cliente> clientes = new List<Cliente>()
+            {
+                new Cliente(12345, "Cliente1", "Apellido1", "Mes 3", 25, 123456789, 0, 0, 0),
+                new Cliente(54321, "Cliente2", "Apellido2", " Mes 2", 30, 987654321, 0, 0, 0),
+                new Cliente(67890, "Cliente3", "Apellido3", " Mes 3", 35, 456789123, 0, 0, 0)
+            };
 
-  
+            int cedulaClienteEliminar = 54321; // Cédula del cliente que deseamos eliminar
+            var input = new StringReader(cedulaClienteEliminar.ToString() + Environment.NewLine); //simula la entrada de un usuario proporcionando la cédula del cliente a eliminar
+            Console.SetIn(input);
+            var output = new StringWriter();
+            Console.SetOut(output);
+
+            // Act
+            Cliente.EliminarInformacionCliente(clientes);
+
+            // Assert
+            Assert.IsTrue(output.ToString().Contains("Ingrese la cédula del cliente que desea eliminar:"));
+            Assert.IsTrue(output.ToString().Contains("Cliente(s) eliminado(s) correctamente"));
+        }
+
+
+
 
 
     }
 }
+
 
 
 
