@@ -30,7 +30,9 @@ namespace ProyectoAula1_SofiaLopera_JulianaHerrera_LauraBedoya
                 Console.WriteLine("9. Mostrar el estrato con el mayor y menor consumo de energía");
                 Console.WriteLine("10.Contabilizar clientes con consumo de agua mayor al promedio");
                 Console.WriteLine("11.Cliente que tuvo mayor desfase");
-                Console.WriteLine("12.Salir");
+                Console.WriteLine("12.Valor total que los clientes le pagan a la empresa por concepto de energía y agua.");
+                Console.WriteLine("13.Salir");
+
                 Console.Write("Ingrese una opción: ");
 
                 string opcion = Console.ReadLine();
@@ -54,7 +56,7 @@ namespace ProyectoAula1_SofiaLopera_JulianaHerrera_LauraBedoya
                         if (cliente != null)
                         {
                             CalculadoraFacturacion calculadora = new CalculadoraFacturacion();
-                            double valorPagar = calculadora.CalcularValorPagar(cliente.MetaAhorroEnergia, cliente.ConsumoActualEnergia, cliente.PromedioConsumoAgua, cliente.ConsumoActualAgua );
+                            double valorPagar = calculadora.CalcularValorPagar(cliente.MetaAhorroEnergia, cliente.ConsumoActualEnergia, cliente.PromedioConsumoAgua, cliente.ConsumoActualAgua);
                             Console.WriteLine($"El valor a pagar del cliente {cliente.Cedula} es: {valorPagar}");
                         }
                         else
@@ -196,15 +198,34 @@ namespace ProyectoAula1_SofiaLopera_JulianaHerrera_LauraBedoya
                         }
                         break;
                     case "12":
-                        salir = true;
+                        double totalPagadoEnergia = 0;
+                        double totalPagadoAgua = 0;
+
+                        foreach (Cliente c in clientes)
+                        {
+                            CalculadoraFacturacion calculadora = new CalculadoraFacturacion();
+                            double valorPagarEnergia = calculadora.CalcularValorPagar(c.MetaAhorroEnergia, c.ConsumoActualEnergia, c.PromedioConsumoAgua, c.ConsumoActualAgua);
+                            totalPagadoEnergia += valorPagarEnergia;
+
+                            double valorPagarAgua = c.ConsumoActualAgua * Cliente.TarifaAgua;
+                            totalPagadoAgua += valorPagarAgua;
+                        }
+
+                        Console.WriteLine($"El total pagado por los clientes por concepto de energía es: {totalPagadoEnergia}");
+                        Console.WriteLine($"El total pagado por los clientes por concepto de agua es: {totalPagadoAgua}");
                         break;
                     default:
                         Console.WriteLine("Opción no válida.");
                         break;
+                    case "13":
+                        salir = true;
+                        break;
                 }
 
-                Console.WriteLine();
+
+            }
+            Console.WriteLine();
             }
         }
     }
-}
+
