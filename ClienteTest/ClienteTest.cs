@@ -198,7 +198,7 @@ namespace ProyectoAula1_SofiaLopera_JulianaHerrera_LauraBedoya_Test
 
         }
         [TestMethod]
-        public void EliminarCliente_ClienteEnLista_ClienteEliminadoCorrectamente()
+        public void EliminarCliente()
         {
             // Arrange
             List<Cliente> clientes = new List<Cliente>()
