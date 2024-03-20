@@ -69,47 +69,47 @@ namespace ProyectoAula1_SofiaLopera_JulianaHerrera_LauraBedoya
             return new Cliente(cedula, nombre, apellidos, periodoConsumo, estrato, metaAhorroEnergia, consumoActualEnergia, promedioConsumoAgua, consumoActualAgua);
         }
 
-        static void ActualizarCedula(Cliente cliente, int nuevaCedula)
+        public static void ActualizarCedula(Cliente cliente, int nuevaCedula)
         {
             cliente.Cedula = nuevaCedula;
         }
 
-        static void ActualizarNombre(Cliente cliente, string nuevoNombre)
+        public static void ActualizarNombre(Cliente cliente, string nuevoNombre)
         {
             cliente.Nombre = nuevoNombre;
         }
 
-        static void ActualizarApellidos(Cliente cliente, string nuevoApellidos)
+        public static void ActualizarApellidos(Cliente cliente, string nuevoApellidos)
         {
             cliente.Apellidos = nuevoApellidos;
         }
 
-        static void ActualizarPeriodoConsumo(Cliente cliente, string nuevoPeriodoConsumo)
+        public static void ActualizarPeriodoConsumo(Cliente cliente, string nuevoPeriodoConsumo)
         {
             cliente.PeriodoConsumo = nuevoPeriodoConsumo;
         }
 
-        static void ActualizarEstrato(Cliente cliente, int nuevoEstrato)
+        public static void ActualizarEstrato(Cliente cliente, int nuevoEstrato)
         {
             cliente.Estrato = nuevoEstrato;
         }
 
-        static void ActualizarMetaAhorroEnergia(Cliente cliente, int nuevaMetaAhorro)
+        public static void ActualizarMetaAhorroEnergia(Cliente cliente, int nuevaMetaAhorro)
         {
             cliente.MetaAhorroEnergia = nuevaMetaAhorro;
         }
 
-        static void ActualizarConsumoActualEnergia(Cliente cliente, int nuevoConsumoEnergia)
+        public static void ActualizarConsumoActualEnergia(Cliente cliente, int nuevoConsumoEnergia)
         {
             cliente.ConsumoActualEnergia = nuevoConsumoEnergia;
         }
 
-        static void ActualizarPromedioConsumoAgua(Cliente cliente, int nuevoPromedioAgua)
+        public static void ActualizarPromedioConsumoAgua(Cliente cliente, int nuevoPromedioAgua)
         {
             cliente.PromedioConsumoAgua = nuevoPromedioAgua;
         }
 
-        static void ActualizarConsumoActualAgua(Cliente cliente, int nuevoConsumoAgua)
+        public static void ActualizarConsumoActualAgua(Cliente cliente, int nuevoConsumoAgua)
         {
             cliente.ConsumoActualAgua = nuevoConsumoAgua;
         }
@@ -201,7 +201,7 @@ namespace ProyectoAula1_SofiaLopera_JulianaHerrera_LauraBedoya
             }
         }
 
-        public static void EliminarInformacionCliente(List<Cliente> clientes)
+        public static void EliminarInformacionCliente(List<Cliente> clientes )
         {
             Console.Write("Ingrese la cédula del cliente que desea eliminar: ");
             int cedulaClienteEliminar = int.Parse(Console.ReadLine());

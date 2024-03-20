@@ -11,7 +11,7 @@ namespace ProyectoAula1_SofiaLopera_JulianaHerrera_LauraBedoya_Test
         public void Cliente_Constructor()
         {
             // Arrange
-            int cedula = 123456789;
+            int cedula = 1234;
             string nombre = "John";
             string apellidos = "Doe";
             string periodoConsumo = "Mes 3";
@@ -40,7 +40,7 @@ namespace ProyectoAula1_SofiaLopera_JulianaHerrera_LauraBedoya_Test
 
  
         [TestMethod]
-        public void SolicitarDatosCliente()
+        public void SolicitarDatos()
         {
             // Arrange
             var input = new System.IO.StringReader(
@@ -63,6 +63,142 @@ namespace ProyectoAula1_SofiaLopera_JulianaHerrera_LauraBedoya_Test
             Assert.AreEqual(25, cliente.PromedioConsumoAgua);
             Assert.AreEqual(20, cliente.ConsumoActualAgua);
         }
+        [TestMethod]
+        public void ActualizarClienteCedula()
+        {
+            //Arrange
+            Cliente cliente = new Cliente(1234, "Nombre", "Apellidos", "Periodo", 2, 100, 140, 30, 25);
+            int nuevaCedula = 3145;
+
+            //Act
+            Cliente.ActualizarCedula(cliente, nuevaCedula);
+
+            //Assert
+            Assert.AreEqual(nuevaCedula, cliente.Cedula);
+
+        }
+
+        [TestMethod]
+        public void ActualizarClienteNombre()
+        {
+            //Arrange
+            Cliente cliente = new Cliente(1234, "Nombre", "Apellidos", "Periodo", 2, 100, 140, 30, 25);
+            string nuevoNombre = "NuevoNombre";
+
+            //Act
+            Cliente.ActualizarNombre(cliente, nuevoNombre);
+
+            //Assert
+            Assert.AreEqual(nuevoNombre, cliente.Nombre);
+
+        }
+
+        [TestMethod]
+        public void ActualizarClienteApellidos()
+        {
+            //Arrange
+            Cliente cliente = new Cliente(1234, "Nombre", "Apellidos", "Periodo", 2, 100, 140, 30, 25);
+            string nuevoApellidos = "NuevoApellidos";
+
+            //Act
+            Cliente.ActualizarApellidos(cliente, nuevoApellidos);
+
+            //Assert
+            Assert.AreEqual(nuevoApellidos, cliente.Apellidos);
+
+        }
+
+        [TestMethod]
+        public void ActualizarClientePeriodoConsumo()
+        {
+            //Arrange
+            Cliente cliente = new Cliente(1234, "Nombre", "Apellidos", "Periodo", 2, 100, 140, 30, 25);
+            string nuevoPeriodoConsumo = "NuevoPeriodoConsumo";
+
+            //Act
+            Cliente.ActualizarPeriodoConsumo(cliente, nuevoPeriodoConsumo);
+
+            //Assert
+            Assert.AreEqual(nuevoPeriodoConsumo, cliente.PeriodoConsumo);
+
+        }
+
+        [TestMethod]
+        public void ActualizarClienteEstrato()
+        {
+            //Arrange
+            Cliente cliente = new Cliente(1234, "Nombre", "Apellidos", "Periodo", 2, 100, 140, 30, 25);
+            int nuevoEstrato = 3;
+
+            //Act
+            Cliente.ActualizarEstrato(cliente, nuevoEstrato);
+
+            //Assert
+            Assert.AreEqual(nuevoEstrato, cliente.Estrato);
+
+        }
+
+        [TestMethod]
+        public void ActualizarClienteMetaAhorroEnergia()
+        {
+            //Arrange
+            Cliente cliente = new Cliente(1234, "Nombre", "Apellidos", "Periodo", 2, 100, 140, 30, 25);
+            int nuevaMetaAhorro = 120;
+
+            //Act
+            Cliente.ActualizarMetaAhorroEnergia(cliente, nuevaMetaAhorro);
+
+            //Assert
+            Assert.AreEqual(nuevaMetaAhorro, cliente.MetaAhorroEnergia);
+
+        }
+
+        [TestMethod]
+        public void ActualizarClienteConsumoActualEnergia()
+        {
+            //Arrange
+            Cliente cliente = new Cliente(1234, "Nombre", "Apellidos", "Periodo", 2, 100, 140, 30, 25);
+            int nuevoConsumoEnergia = 130;
+
+            //Act
+            Cliente.ActualizarConsumoActualEnergia(cliente, nuevoConsumoEnergia);
+
+            //Assert
+            Assert.AreEqual(nuevoConsumoEnergia, cliente.ConsumoActualEnergia);
+
+        }
+
+        [TestMethod]
+        public void ActualizarClientePromedioConsumoAgua()
+        {
+            //Arrange
+            Cliente cliente = new Cliente(1234, "Nombre", "Apellidos", "Periodo", 2, 100, 140, 30, 25);
+            int nuevoPromedioConsumoAgua = 40;
+
+            //Act
+            Cliente.ActualizarPromedioConsumoAgua(cliente, nuevoPromedioConsumoAgua);
+
+            //Assert
+            Assert.AreEqual(nuevoPromedioConsumoAgua, cliente.PromedioConsumoAgua);
+
+        }
+
+        [TestMethod]
+        public void ActualizarClienteConsumoActualAgua()
+        {
+            //Arrange
+            Cliente cliente = new Cliente(1234, "Nombre", "Apellidos", "Periodo", 2, 100, 140, 30, 25);
+            int nuevoConsumoAgua = 30;
+
+            //Act
+            Cliente.ActualizarConsumoActualAgua(cliente, nuevoConsumoAgua);
+
+            //Assert
+            Assert.AreEqual(nuevoConsumoAgua, cliente.ConsumoActualAgua);
+
+        }
+
+  
 
 
     }
