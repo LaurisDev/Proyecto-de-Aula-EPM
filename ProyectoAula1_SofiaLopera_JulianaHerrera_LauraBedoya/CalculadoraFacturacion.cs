@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ProyectoAula1_SofiaLopera_JulianaHerrera_LauraBedoya
 {
-    internal class CalculadoraFacturacion
+    public class CalculadoraFacturacion
     {
         public double CalcularValorPagar(int metaAhorroEnergia, int consumoActualEnergia, int promedioConsumoAgua, int consumoActualAgua)
         {
@@ -38,6 +38,7 @@ namespace ProyectoAula1_SofiaLopera_JulianaHerrera_LauraBedoya
             double valorTotalPagar = valorPagarEnergia + valorPagarAgua;
             return valorTotalPagar;
         }
+        
     }
 }
  
